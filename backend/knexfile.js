@@ -1,5 +1,11 @@
 // Update with your config settings.
 
+/*
+npx knex init
+npx knex migrate:make ${nome da tabela}
+npx knex migrate:latest
+*/
+
 module.exports = {
 
   development: {
