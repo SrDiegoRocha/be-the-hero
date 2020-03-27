@@ -1,6 +1,9 @@
 const Express = require("express");
 const app = Express();
 
+// importação de um carinha para tratar erros de validação no backend
+const { errors } = require("celebrate");
+
 // CORS - diz quem usa minha aplicação
 const cors = require('cors');
 app.use(cors());
@@ -10,8 +13,9 @@ app.use(Express.json());
 // Configurando rotas
 const router = require('./src/routes');
 app.use("/", router);
+app.use(errors());
 
-const PORT = 3333;
-app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}`);
-});
+module.exports = app;
+
+// npm install jes - // pra testar a aplicação
+// npx jest -- init //executar
